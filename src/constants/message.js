@@ -5,7 +5,7 @@ const INPUT_MESSAGE = Object.freeze({
 
 const OUTPUT_MESSAGE = Object.freeze({
   result: "\n실행 결과",
-  execute: (name, step) => `${name} : ${step}`,
+  execute: (name, score) => `${name} : ${"-".repeat(score)}`,
   winner: (winner) => `최종 우승자 : ${winner}`,
 });
 

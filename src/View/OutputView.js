@@ -7,8 +7,11 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.result);
   },
   // 실행 결과 출력
-  printExecute(name, step) {
-    Console.print(OUTPUT_MESSAGE.execute(name, step));
+  printExecute(result) {
+    result.forEach((player) => {
+      Console.print(OUTPUT_MESSAGE.execute(player.name, player.score));
+    });
+    Console.print("\n");
   },
   // 우승자 안내 문구 출력
   print(winner) {
