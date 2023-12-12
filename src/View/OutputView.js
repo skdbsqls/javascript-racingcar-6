@@ -14,8 +14,8 @@ const OutputView = {
     Console.print("\n");
   },
   // 우승자 안내 문구 출력
-  print(winner) {
-    Console.print(OUTPUT_MESSAGE.winner(winner));
+  printWinner(winner) {
+    Console.print(OUTPUT_MESSAGE.winner(winner.join(", ")));
   },
 };
 
