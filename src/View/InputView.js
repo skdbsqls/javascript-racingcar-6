@@ -7,32 +7,20 @@ const InputView = {
   // 자동차 이름 입력
   async readCarNames() {
     const carNames = await Console.readLineAsync(INPUT_MESSAGE.carName);
-
-    const carNameArr = this.CarNameValidate(carNames);
-    return carNameArr;
-  },
-
-  // 자동차 이름 예외 처리
-  validateCarName(carNames) {
-    const carNames = CarNameValidate.notSeparate(carNames);
-
-    // 쉼표로 구분한 경우
-    const carNameArr = carNames.split(",").trim();
-
+    // 예외 처리
+    const carNameArr = CarNameValidate.notSeparate(carNames);
     CarNameValidate.invalidLength(carNameArr);
-    return carNameArr;
+
+    return carNameArr.map((carName) => carName.trim());
   },
 
   // 시도할 횟수 입력
   async readTryNum() {
     const tryNum = await Console.readLineAsync(INPUT_MESSAGE.tryNum);
-
-    this.validateTryNum(tryNum);
-    return Number(tryNum);
-  },
-  // 시도할 횟수 예외 처리
-  validateTryNum(tryNum) {
+    // 예외 처리
     TryNumValidate.notNumber(tryNum);
+
+    return Number(tryNum);
   },
 };
 
